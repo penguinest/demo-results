@@ -1,0 +1,26 @@
+{
+  "name": "demo-results",
+  "version": "1.0.0",
+  "description": "PoC of neverthrow variant",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.js",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "env $(cat .env) tsc-watch --onSuccess 'yarn run start:onsuccess'",
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "start:onsuccess": "tsc-alias && node ./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.4",
+    "tsc-alias": "^1.8.8",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "http-status-codes": "^2.3.0"
+  }
+}
